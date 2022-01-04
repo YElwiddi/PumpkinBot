@@ -28,6 +28,7 @@ client.on('messageCreate', async message =>{
 	//need to add check for if user doesnt exist - crashes the bot
 	//need to add check for if user has SOLOQUEUE as their third dictionary rather than second
 	if (message.content.includes("!rank")){
+
 		if (message.author.bot) return false
 		var name = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
 		var data = await LeagueAPI.getSummonerByName(name).then(async function(accountObject) {
@@ -148,7 +149,7 @@ for (const file of commandFiles) {
 	client.commands.set(command.data.name, command);
 }
 
-//Shadow realm for patrick:
+//Shadow realm for specific user:
 client.on('guildMemberAdd', member => {
     member.guild.channels.cache.get('914319787994279977').send('Welcome, <@' + member.user + '>!'); 
 	if (member.user.tag === 'nitrogen#1584'){
@@ -159,7 +160,6 @@ client.on('guildMemberAdd', member => {
 	}
 });
 
-//this isnt working idk why
 client.on('guildMemberRemove', member => {
     member.guild.channels.cache.get('913203147839766528').send('<@' + member.user + '> has left the server.');
 });
