@@ -3,7 +3,7 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { clientId, guildId, token } = require('./config.json');
 //let LeagueAPI = require('leagueapiwrapper');
-//LeagueAPI = new LeagueAPI('RGAPI-3fc132cd-1b6d-4f88-9eee-cfa3fba7c992', Region.NA);
+//LeagueAPI = new LeagueAPI(LOL_API, Region.NA);
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 

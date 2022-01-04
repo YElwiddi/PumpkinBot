@@ -7,7 +7,7 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('
 
 //LoL:
 let LeagueAPI = require('leagueapiwrapper');
-LeagueAPI = new LeagueAPI('RGAPI-3fc132cd-1b6d-4f88-9eee-cfa3fba7c992', Region.NA);
+LeagueAPI = new LeagueAPI(process.env.LOL_API, Region.NA);
 
 
 
